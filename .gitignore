@@ -1,0 +1,5 @@
+tmp
+.env
+.vscode
+cmd/local
+bin
