@@ -7,6 +7,8 @@ import (
 
 	"go-app-model/internal/app"
 	"go-app-model/internal/http"
+	"go-app-model/internal/http/controllers"
+	"go-app-model/internal/services"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/goioc/di"
@@ -57,6 +59,10 @@ func registerBeans() {
 	di.RegisterBean("Routers", reflect.TypeOf((*http.DefaultRouter)(nil)))
 
 	// Controllers
+	di.RegisterBean("TestController", reflect.TypeOf((*controllers.TestController)(nil)))
+
+	// Services
+	di.RegisterBean("TestService", reflect.TypeOf((*services.DefaultTestService)(nil)))
 
 	// Application
 	di.RegisterBean("app", reflect.TypeOf((*app.App)(nil)))

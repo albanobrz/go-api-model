@@ -15,7 +15,6 @@ type App struct {
 func (app *App) bootstrapDb() error {
 	connUri := strings.TrimRight(html.UnescapeString(os.Getenv("DB_URI")), "\r\n")
 	fmt.Println(connUri)
-	fmt.Println("test1")
 	// connect to db here
 
 	return nil
@@ -27,6 +26,5 @@ func (app *App) Start() error {
 		return err
 	}
 
-	fmt.Println("test")
 	return app.router.Start()
 }
